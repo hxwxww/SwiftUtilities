@@ -17,6 +17,8 @@
 		AA4AE5D423D3007C00A8515D /* BytesConvertible.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA4AE5D323D3007C00A8515D /* BytesConvertible.swift */; };
 		AA4AE5D623D3008E00A8515D /* HexConvertible.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA4AE5D523D3008E00A8515D /* HexConvertible.swift */; };
 		AA4AE5D823D300EC00A8515D /* HexUtilsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA4AE5D723D300EC00A8515D /* HexUtilsTests.swift */; };
+		AA4AE5DD23D307C800A8515D /* String+Hash.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA4AE5DC23D307C800A8515D /* String+Hash.swift */; };
+		AA4AE5DF23D312A400A8515D /* CryptoUtilsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA4AE5DE23D312A400A8515D /* CryptoUtilsTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,6 +46,8 @@
 		AA4AE5D323D3007C00A8515D /* BytesConvertible.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BytesConvertible.swift; sourceTree = "<group>"; };
 		AA4AE5D523D3008E00A8515D /* HexConvertible.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HexConvertible.swift; sourceTree = "<group>"; };
 		AA4AE5D723D300EC00A8515D /* HexUtilsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HexUtilsTests.swift; sourceTree = "<group>"; };
+		AA4AE5DC23D307C800A8515D /* String+Hash.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Hash.swift"; sourceTree = "<group>"; };
+		AA4AE5DE23D312A400A8515D /* CryptoUtilsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CryptoUtilsTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -102,6 +106,7 @@
 			children = (
 				AA4AE5C223D2EA2A00A8515D /* SwiftUtilitiesTests.swift */,
 				AA4AE5D723D300EC00A8515D /* HexUtilsTests.swift */,
+				AA4AE5DE23D312A400A8515D /* CryptoUtilsTests.swift */,
 				AA4AE5C423D2EA2A00A8515D /* Info.plist */,
 			);
 			path = SwiftUtilitiesTests;
@@ -111,6 +116,7 @@
 			isa = PBXGroup;
 			children = (
 				AA4AE5D023D2EC7200A8515D /* HexUtils */,
+				AA4AE5DB23D3068E00A8515D /* CryptoUtils */,
 			);
 			path = SwiftUtilities;
 			sourceTree = "<group>";
@@ -122,6 +128,14 @@
 				AA4AE5D523D3008E00A8515D /* HexConvertible.swift */,
 			);
 			path = HexUtils;
+			sourceTree = "<group>";
+		};
+		AA4AE5DB23D3068E00A8515D /* CryptoUtils */ = {
+			isa = PBXGroup;
+			children = (
+				AA4AE5DC23D307C800A8515D /* String+Hash.swift */,
+			);
+			path = CryptoUtils;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -227,6 +241,7 @@
 			files = (
 				AA4AE5B023D2EA2800A8515D /* ViewController.swift in Sources */,
 				AA4AE5D423D3007C00A8515D /* BytesConvertible.swift in Sources */,
+				AA4AE5DD23D307C800A8515D /* String+Hash.swift in Sources */,
 				AA4AE5D623D3008E00A8515D /* HexConvertible.swift in Sources */,
 				AA4AE5AC23D2EA2800A8515D /* AppDelegate.swift in Sources */,
 				AA4AE5AE23D2EA2800A8515D /* SceneDelegate.swift in Sources */,
@@ -239,6 +254,7 @@
 			files = (
 				AA4AE5C323D2EA2A00A8515D /* SwiftUtilitiesTests.swift in Sources */,
 				AA4AE5D823D300EC00A8515D /* HexUtilsTests.swift in Sources */,
+				AA4AE5DF23D312A400A8515D /* CryptoUtilsTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -393,6 +409,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 77S76QM4E8;
 				INFOPLIST_FILE = SwiftUtilities/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -411,6 +428,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 77S76QM4E8;
 				INFOPLIST_FILE = SwiftUtilities/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
