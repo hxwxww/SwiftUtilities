@@ -14,6 +14,9 @@
 		AA4AE5B523D2EA2A00A8515D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AA4AE5B423D2EA2A00A8515D /* Assets.xcassets */; };
 		AA4AE5B823D2EA2A00A8515D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AA4AE5B623D2EA2A00A8515D /* LaunchScreen.storyboard */; };
 		AA4AE5C323D2EA2A00A8515D /* SwiftUtilitiesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA4AE5C223D2EA2A00A8515D /* SwiftUtilitiesTests.swift */; };
+		AA4AE5D423D3007C00A8515D /* BytesConvertible.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA4AE5D323D3007C00A8515D /* BytesConvertible.swift */; };
+		AA4AE5D623D3008E00A8515D /* HexConvertible.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA4AE5D523D3008E00A8515D /* HexConvertible.swift */; };
+		AA4AE5D823D300EC00A8515D /* HexUtilsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA4AE5D723D300EC00A8515D /* HexUtilsTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,6 +41,9 @@
 		AA4AE5BE23D2EA2A00A8515D /* SwiftUtilitiesTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SwiftUtilitiesTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		AA4AE5C223D2EA2A00A8515D /* SwiftUtilitiesTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftUtilitiesTests.swift; sourceTree = "<group>"; };
 		AA4AE5C423D2EA2A00A8515D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		AA4AE5D323D3007C00A8515D /* BytesConvertible.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BytesConvertible.swift; sourceTree = "<group>"; };
+		AA4AE5D523D3008E00A8515D /* HexConvertible.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HexConvertible.swift; sourceTree = "<group>"; };
+		AA4AE5D723D300EC00A8515D /* HexUtilsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HexUtilsTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,6 +85,7 @@
 		AA4AE5AA23D2EA2800A8515D /* SwiftUtilities */ = {
 			isa = PBXGroup;
 			children = (
+				AA4AE5CD23D2EB3B00A8515D /* SwiftUtilities */,
 				AA4AE5AB23D2EA2800A8515D /* AppDelegate.swift */,
 				AA4AE5AD23D2EA2800A8515D /* SceneDelegate.swift */,
 				AA4AE5AF23D2EA2800A8515D /* ViewController.swift */,
@@ -94,9 +101,27 @@
 			isa = PBXGroup;
 			children = (
 				AA4AE5C223D2EA2A00A8515D /* SwiftUtilitiesTests.swift */,
+				AA4AE5D723D300EC00A8515D /* HexUtilsTests.swift */,
 				AA4AE5C423D2EA2A00A8515D /* Info.plist */,
 			);
 			path = SwiftUtilitiesTests;
+			sourceTree = "<group>";
+		};
+		AA4AE5CD23D2EB3B00A8515D /* SwiftUtilities */ = {
+			isa = PBXGroup;
+			children = (
+				AA4AE5D023D2EC7200A8515D /* HexUtils */,
+			);
+			path = SwiftUtilities;
+			sourceTree = "<group>";
+		};
+		AA4AE5D023D2EC7200A8515D /* HexUtils */ = {
+			isa = PBXGroup;
+			children = (
+				AA4AE5D323D3007C00A8515D /* BytesConvertible.swift */,
+				AA4AE5D523D3008E00A8515D /* HexConvertible.swift */,
+			);
+			path = HexUtils;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -201,6 +226,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				AA4AE5B023D2EA2800A8515D /* ViewController.swift in Sources */,
+				AA4AE5D423D3007C00A8515D /* BytesConvertible.swift in Sources */,
+				AA4AE5D623D3008E00A8515D /* HexConvertible.swift in Sources */,
 				AA4AE5AC23D2EA2800A8515D /* AppDelegate.swift in Sources */,
 				AA4AE5AE23D2EA2800A8515D /* SceneDelegate.swift in Sources */,
 			);
@@ -211,6 +238,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				AA4AE5C323D2EA2A00A8515D /* SwiftUtilitiesTests.swift in Sources */,
+				AA4AE5D823D300EC00A8515D /* HexUtilsTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
