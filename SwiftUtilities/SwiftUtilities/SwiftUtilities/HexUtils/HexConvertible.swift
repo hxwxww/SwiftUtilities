@@ -42,3 +42,48 @@ extension HexConvertible where Self: Collection, Element == UInt8 {
 
 extension Array: HexConvertible where Element == UInt8 { }
 extension Data: HexConvertible { }
+
+extension String {
+    
+    /// 是否是16进制字符串
+    public var isHexString: Bool {
+        let hexChars = "0123456789abcdef"
+        if let _ = lowercased().first(where: { !hexChars.contains($0) }) {
+            return false
+        } else {
+            return true
+        }
+        
+    }
+
+    /// 转为hexData
+    public var hexData: Data? {
+        guard isHexString else {
+            return nil
+        }
+        var data = Data()
+        for i in stride(from: 0, to: count, by: 2) {
+            let hex = (self as NSString).substring(with: NSRange(location: i, length: 2))
+            let scanner = Scanner(string: hex)
+            var intValue: UInt64 = 0
+            scanner.scanHexInt64(&intValue)
+            data.append(UInt8(intValue))
+        }
+        return data
+    }
+    
+}
+
+extension Data {
+    
+    /// 通过hexString初始化
+    ///
+    /// - Parameter hexString: 16进制字符串
+    public init?(hexString: String) {
+        guard let data = hexString.hexData else {
+            return nil
+        }
+        self = data
+    }
+    
+}

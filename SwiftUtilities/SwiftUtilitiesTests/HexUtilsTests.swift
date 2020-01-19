@@ -47,6 +47,10 @@ class HexUtilsTests: XCTestCase {
         
         let data = Data([0xAB, 0xBC, 0xCD, 0xDE])
         XCTAssert(data.hexDump(separator: "-", uppercase: false) == "ab-bc-cd-de")
+        
+        let hexString = "ffdebc9a78563412"
+        XCTAssert(hexString.hexData?.hexString == "ffdebc9a78563412")
+        XCTAssert(Data(hexString: hexString)?.hexString == "ffdebc9a78563412")
     }
     
 }
