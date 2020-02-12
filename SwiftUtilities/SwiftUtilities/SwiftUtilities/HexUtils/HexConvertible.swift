@@ -53,7 +53,6 @@ extension String {
         } else {
             return true
         }
-        
     }
 
     /// 转为hexData

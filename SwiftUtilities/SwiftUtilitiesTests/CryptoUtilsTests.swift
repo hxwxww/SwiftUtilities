@@ -7,6 +7,7 @@
 //
 
 import XCTest
+@testable import SwiftUtilities
 
 class CryptoUtilsTests: XCTestCase {
 
@@ -37,6 +38,29 @@ class CryptoUtilsTests: XCTestCase {
         XCTAssert(testStr.hmacString(.SHA256, key: key) == "dadf3b5cbc7e53b4a6d08b654966f41596c5f392f6efa51027564faafaa6cf9a")
         XCTAssert(testStr.hmacString(.SHA384, key: key) == "405fbec7cd0495528bff66a1e680b7788129d099bd1bc687a8330b612a4c0edef8fe781f9c53bc9279bce6b3582c8ddf")
         XCTAssert(testStr.hmacString(.SHA512, key: key) == "21627fd3086dbaadff448ac62aef9c606f0caa1a4c2703bed9e42a3f5df500da1ecf257a8d5e571fefaf12ad5967455ee1a7c63a07596769e34db8db10d4b052")
+    }
+ 
+    func testRSA() {
+        do {
+            let privateKeyLabel = "whx_pri"
+            let publicKeyLabel = "whx_pub"
+            let priKey = try KeyChainUtils.getRSAPrivateKey(label: privateKeyLabel)
+            let pubKey = try KeyChainUtils.getRSAPublicKey(label: publicKeyLabel)
+            let plainString = "test RSA"
+            print("plainString: \(plainString)")
+            let encryptedString = try CryptoUtils.rsaEncrypt(pubKey, plainText: plainString)
+            print("encryptedString: \(encryptedString)")
+            let decryptString = try CryptoUtils.rsaDecrypt(priKey, cipherText: encryptedString)
+            print("decryptString: \(decryptString)")
+            XCTAssert(decryptString == plainString)
+            let signString = "123456789"
+            let signature = try CryptoUtils.rsaSign(priKey, message: signString)
+            print("signature: \(signature)")
+            let result = try CryptoUtils.rsaVerify(pubKey, message: signString, signature: signature)
+            XCTAssert(result)
+        } catch {
+            print(error.localizedDescription)
+        }
     }
     
 }
